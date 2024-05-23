@@ -1,0 +1,456 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    
+    
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: rgba(1, 82, 101, 0.5); /* Cambia el color de fondo según tus preferencias */
+    color: white; /* Cambia el color del texto según tus preferencias */
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el logo */
+.logo img {
+    width: 89px; /* Ajusta el ancho del logo según tus necesidades */
+    height: 50px;
+}
+
+/* Estilos para la barra de navegación */
+
+.logo{
+    height: 70px;
+    width: 70px;
+    margin-left: 3%;
+}
+
+nav {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+nav ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-left: 0; 
+     
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.btn-registro{
+
+    background-image:linear-gradient(90deg, rgb(255, 14, 135), rgb(19, 227, 255), rgb(251, 235, 20), rgb(255, 15, 15));   
+    width: 150px;
+    height: 50px;    
+    margin-left:auto;
+    margin-right: 3%;
+    cursor:pointer;
+    border-radius: 10px;
+    border: none;
+    background-size: 300%;
+    transition: all 0.6s ease; 
+       
+}
+.btn-registro:hover{
+    
+    background-position:100%;
+    
+}
+
+
+/*ESTILOS PARA LA VENTANTA DE REGISTRO*/
+
+
+.cerrar-registro{
+    display: none;
+
+}
+
+.modal-visible{
+    
+    display: flex;
+    margin-top: 40%;
+    border-radius: 10px;
+    background-color: beige;
+    width: 40%;
+    height: 40%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*menu hamburguesa*/
+
+.btn-hamburguer,
+.cerrar-menu{
+    display: none;
+
+}
+@media screen and (max-width: 700px) {
+    .btn-hamburguer,
+    .cerrar-menu
+    {   
+        background-image:linear-gradient(90deg, rgb(255, 14, 135), rgb(19, 227, 255), rgb(251, 235, 20), rgb(255, 15, 15));
+        display: flex ;
+        background-size: 300%;
+        height: 50px;
+        width: 70px;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;     
+    }
+
+    nav{
+        
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1 rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right:60%;
+        background-color: black;   
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        height: 100%;
+        
+
+    }
+    nav.visible {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        
+        
+        
+        
+    }
+
+    ul{
+        flex-direction: column;
+        margin-bottom: auto;
+    
+        
+        
+        
+    }
+}
+
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.messages li {
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.messages li.success {
+    background-color: rgba(1, 82, 101);
+    color: white;
+    border: 1px solid #c3e6cb;
+    font-weight: bold;
+}
+
+
+/* Estilos para las tarjetas ---------------------------------------------------------*/
+body{ /* darle estilo al body*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100vh;
+    
+    }
+    .card { /*tamaño del card*/
+        position: relative;
+        width: 300px;
+        height: 350px;
+        margin: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card .face { /* dar estilo al frente de la card*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .5s;
+    }
+    .card .front { /* dar estilo a la sombra del frente de la card*/
+        transform: perspective(600px) rotateY(0deg);
+        box-shadow: 0 5px 10px #000;
+    }
+    .card .front img { /*dar estilo a la imagen*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card .front h3{ /*dar estilo al titulo*/
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 45px;
+     line-height: 45px;
+     color: #fff;
+     background: rgba(0, 0, 0, .4);
+     text-align: center;
+    }
+    .card .back { /*dar estilo a la cara de atras de la card*/
+        transform: perspective(600px) rotateY(180deg);
+        background: rgba(1, 82, 101, 0.8);
+        padding: 15px;
+        color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        box-shadow: 0 5px 10px #000;
+    }
+    .card .back .link{ /* dar estilo al link detalles*/
+        border-top: solid 1px #f3f3f3;
+        height: 50px;
+        line-height: 50px;
+    }
+    .card .back .link a {
+    color: #f3f3f3;
+    }
+    .card .back h3 {   /* estilo para el titulo*/
+       font-size: 30px;
+       margin-top: 20px;
+       letter-spacing: 2px;
+    }
+    .card .back p { /* estilo para el parrafo*/
+        letter-spacing: 1px;
+    }
+    .card:hover .front {
+        transform: perspective(600px) rotateY(180deg);
+    }
+    .card:hover .back {
+        transform: perspective(600px) rotateY(360deg);
+    }
+
+    .slider-frame {
+        width: 800px;
+        height: auto;
+        margin: 50px auto 0;
+        overflow: hidden;
+        animation: slide 10s infinite alternate ease-in-out;
+    }
+    .slider-frame ul {
+        display: flex;
+        padding: 0;
+        width: 400%;
+    }
+    .slider-frame li{
+        list-style: none;
+        width: 100%;
+    }
+    .slider-frame img {
+        width: 100%;
+    }
+
+    @keyframes slide {
+        0%  {margin-left: 0%;}
+        20% {margin-left: 0%;}
+    
+        25% {margin-left:-100% ;}
+        45% {margin-left: -100%;}
+    
+        50% {margin-left:-200% ;}
+        70% {margin-left: -200%;}
+    
+        75% {margin-left: -300% ;}
+        95% {margin-left: -300%;}
+    
+    }
+    
+
+
+    .tar-contenedor{
+        display: flex;
+        flex-wrap: wrap;
+        
+        border-radius: 10px;
+        width: 95%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .contenedor-music{
+        display: flex;
+        flex-wrap: wrap;
+        
+        
+        border-radius: 10px;
+        width: 95%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+
+/*POPUPREGISTRO*/
+
+  /*  CONTENEDOR DEL FORM */
+  .form-container {
+    border-radius: 10px;
+    display: none;
+    position:fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 1;
+  }
+  
+  /* ESTILOS PARA EL FORM */
+  .form {
+    border-radius: 10px;
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(238, 153, 167);
+  }
+  
+  /* INPUTS */
+  .form input[type=text], .form input[type=password] {
+    border-radius: 10px;
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* click en los inputs */
+  .form input[type=text]:focus, .form input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Boton login */
+  .form .btn {
+    background-color: #05c17c;
+    color: white;
+    padding: 16px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* boton cancelar */
+  .form .cancel {
+    background-color: red;
+  }
+
+
+ /* CARRUSEL */
+
+ .container {
+    width: 90%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container ul {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.container ul li {
+    list-style: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.container ul li video {
+   width: 200px;
+   transition: all 0.3s;
+}
+
+.container ul li video:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+footer {
+    background-color: rgba(1, 82, 101, 0.5); /* Cambia el color de fondo según tus preferencias */
+    color:white ; /* Cambia el color del texto según tus preferencias */
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+  

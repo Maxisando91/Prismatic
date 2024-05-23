@@ -1,0 +1,454 @@
+{% extends "web/base.html" %}
+
+{% load static %}
+
+
+     
+{% block extra_css %}
+    <link rel="shortcut icon" href="{% static 'web/img/bonjovi/icon bon jovi.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'web/styles/bonjovi.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    
+{% endblock %}
+    {% block titulo %}BON JOVI{% endblock %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'web/js/mainbonjovi.js' %}"></script>
+<body>
+
+    {% block header %}
+    <a href="#" class="logo"><i class="fas fa-heart"></i> </i>BON JOVI</a>
+    <nav class="navbar">
+        <a class="active" href="{% url 'index' %}">Home</a>
+        <a href="#albums"> Albums</a>
+        <a href="#miembros">Miembros</a>
+        <a href="#merch">Merch</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#albums" class="fas fa-heart"></a>
+        <a href="indexcarritojovi.html.html" target="_blank" class="fas fa-shopping-cart"></a>
+    </div>
+    
+    {% endblock %}
+
+
+    {% block main %}
+            <form action="" id="search-form">
+                <input type="search" placeholder="search here..." name="" id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+                <i class="fas fa-times" id="close"></i>
+            </form>
+
+            <section class="BTS" id="BTS">
+                <div class="swiper mySwiper BTS-slider">
+
+                    <div class="swiper-wrapper wrapper">
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>Bon Jovi</span>
+                                <h3>Historia</h3>
+                                <p>Bon Jovi es una banda de rock estadounidense formada en 1983 en Sayreville, Nueva Jersey.
+                                    La
+                                    banda se hizo famosa en la década de 1980 y desde entonces ha sido una de las bandas de
+                                    rock
+                                    más exitosas del mundo. La formación original incluía a Jon Bon Jovi como vocalista
+                                    principal, Richie Sambora como guitarrista principal, David Bryan en los teclados, Tico
+                                    Torres en la batería y Alec John Such en el bajo.</p>
+                                <span class="hide" id="hideText">
+                                    <p>Bon Jovi ha vendido millones de discos en todo el mundo y ha recibido numerosos
+                                        premios y
+                                        reconocimientos a lo largo de su carrera. Además de su éxito en la música, la banda
+                                        ha
+                                        estado involucrada en obras benéficas y causas filantrópicas.</p>
+                                </span>
+                                <a href="#" class="btn" id="hideText_btn">Ver mas</a>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 1.jpg' %}"  alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>1983</span>
+                                <h3>Debut</h3>
+                                <p>Bon Jovi debutó como banda en 1983. Fue fundada en Sayreville, Nueva Jersey, Estados
+                                    Unidos.
+                                    El álbum debut homónimo de Bon Jovi fue lanzado en 1984 y marcó el comienzo de su
+                                    carrera
+                                    musical. La banda, liderada por Jon Bon Jovi, se convirtió en uno de los actos de rock
+                                    más
+                                    influyentes y exitosos de la década de 1980 y ha continuado teniendo una exitosa carrera
+                                    a
+                                    lo largo de las décadas.</p>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 2.jpg' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>1984</span>
+                                <h3>Primer concierto</h3>
+                                <p>El primer concierto de Bon Jovi como banda se llevó a cabo en Sayreville, Nueva Jersey,
+                                    el 29
+                                    de enero de 1984. La banda estaba promocionando su álbum debut homónimo "Bon Jovi", que
+                                    se
+                                    lanzó poco antes. El concierto tuvo lugar en el club nocturno "The Stone Pony", que es
+                                    un
+                                    lugar icónico en la escena musical de Nueva Jersey. A partir de ese momento, Bon Jovi
+                                    comenzó a construir su base de fanáticos y a ganar reconocimiento en la escena musical
+                                    local, lo que eventualmente los llevaría a un éxito internacional.</p>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 3.webp' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>Epoca</span>
+                                <h3>Dorada</h3>
+                                <p>En el año 2000 alcanzaron gran éxito y repercusión gracias al sencillo «It's My Life» del
+                                    álbum Crush, que fue número uno en las listas de nueve países y consiguió diez discos de
+                                    platino</p>
+                                <a href="https://www.youtube.com/watch?v=vx2u5uUu3DE" target="_blank" class="btn">It's My
+                                    Life</a>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 4.jpg' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>El adiós</span>
+                                <h3>Richie Sambora</h3>
+                                <p>Tras la ausencia de Richie Sambora en un concierto en Canadá, donde no se presentó a
+                                    tocar,
+                                    los rumores de desavenencias en el seno de la banda surgieron por doquier. Sambora se
+                                    perdió
+                                    el resto de la gira y fue sustituído en los siguientes conciertos por Phillip Xenidis.
+                                    Tras un cruce público de acusaciones con Jon, en las que insinuaban una mala relación
+                                    entre ellos como causa de la separación de Richie de la banda, finalmente el propio
+                                    Sambora reconoció que el problema era el cansancio tras treinta años de trabajo
+                                    ininterrumpido. Sambora no cerraba la puerta a volver a tocar con la banda, pero no
+                                    sería en un futuro inmediato.
+                                </p>
+
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 5.webp' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>Resurgimiento</span>
+                                <h3>Nueva Formación</h3>
+                                <p>En 2018 Bon Jovi fue incluido en el Salón de la Fama del Rock and Roll. En el evento de
+                                    inclusión, que se celebró en abril de ese año, se reunieron todos los miembros
+                                    originales de
+                                    la banda, entre los que se encontraban Alec John Such y Richie Sambora, y realizaron una
+                                    breve actuación en la que tocaron los temas "You Give Love a Bad Name", "It's My Life",
+                                    "When we Were Us" y "Livin'on A Prayer".</p>
+                                <a href="https://youtu.be/oabJ6vvz0OI" target="_blank" class="btn">Livin'on A Prayer</a>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 6.jpg' %}" alt="" style="width: 300px">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide slide">
+                            <div class="content">
+                                <span>Actualidad</span>
+                                <h3>Bon Jovi 2020 Tour</h3>
+                                <p>La banda había anunciado planes para una gira llamada "Bon Jovi 2020 Tour" en apoyo a su
+                                    álbum "2020", que se lanzó en 2020. Sin embargo, debido a la pandemia de COVID-19,
+                                    muchas
+                                    fechas de la gira se pospusieron o cancelaron. Además de la gira, la banda se había
+                                    mantenido activa en términos de creación de música y participación en obras benéficas.
+                                    Jon
+                                    Bon Jovi, el líder de la banda, también había estado involucrado en esfuerzos
+                                    filantrópicos,
+                                    incluida la Jon Bon Jovi Soul Foundation, que trabaja en cuestiones de falta de vivienda
+                                    y
+                                    otros problemas sociales.</p>
+                            </div>
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/Banda 7.webp' %}" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                <div class="swiper-pagination">
+
+
+                
+            </section>
+
+        
+            <section class="albums" id="albums">
+                <h3 class="sub-heading"> Los Mejores</h3>
+                <h1 class="heading"> Albums</h1>
+
+                <div class="box-container">
+                    {% for elemento in elementos %}
+                    <div class="box">
+                        <a href="#" class="fas fa-heart"></a>
+                        <a href="#" class="fas fa-heart-music-camera-bolt"></a>
+                        <img src="{% static elemento.imagen %}" alt="">
+                        <h3>{{ elemento.titulo }}</h3>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>{{ elemento.span }}</span>
+                        <br>
+                        <a href="{{ elemento.video }}" target="_blank" class="btn">Ver Mv</a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+            <section class="miembros" id="miembros">
+                <h1 class="heading">Miembros</h1>
+
+                <div class="row">
+
+                    <div class="image">
+                        <img src="{% static 'web/img/bonjovi/bon jovi.png' %}" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>Bon Jovi</h3>
+                        <p>Jon Bon Jovi es un cantante, músico y actor estadounidense nacido el 2 de marzo de 1962 en Nueva
+                            Jersey. Es conocido por ser el líder y vocalista principal de la banda de rock Bon Jovi, una de
+                            las
+                            más exitosas en la historia del rock. Además de su carrera musical, ha incursionado en la
+                            actuación
+                            y es conocido por su labor filantrópica, incluida la fundación Jon Bon Jovi Soul Foundation. Ha
+                            recibido numerosos premios y reconocimientos a lo largo de su carrera.</p>
+                        <br>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="image">
+                            <img src="{% static 'web/img/bonjovi/richie-sambora-2.jpg' %}" alt="">
+                        </div>
+
+                        <div class="content">
+                            <h3>Richie Sambora</h3>
+                            <p>Richie Sambora es un músico, guitarrista y cantante estadounidense, nacido el 11 de julio de
+                                1959
+                                en Nueva Jersey. Es conocido por haber sido el guitarrista principal y co-compositor de la
+                                banda
+                                de rock Bon Jovi. Sambora desempeñó un papel clave en el éxito de la banda, coescribiendo
+                                muchos
+                                de sus éxitos. Durante su tiempo en Bon Jovi, la banda alcanzó fama mundial y vendió
+                                millones de
+                                discos. Richie Sambora dejó la banda en 2013, y desde entonces ha continuado su carrera en
+                                solitario y colaborado en proyectos musicales. Además de su música, Sambora ha estado
+                                involucrado en obras benéficas y causas filantrópicas.</p>
+                            <br>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="image">
+                                <img src="{% static 'web/img/bonjovi/david bryan.jpg' %}" alt="">
+                            </div>
+
+                            <div class="content">
+                                <h3>David Bryan</h3>
+                                <p>David Bryan, cuyo nombre real es David Bryan Rashbaum, es un músico y tecladista
+                                    estadounidense nacido el 7 de febrero de 1962. Es conocido por ser un miembro fundador
+                                    de la
+                                    banda de rock Bon Jovi, donde desempeña un papel importante como tecladista y corista.
+                                    Bryan
+                                    ha sido una parte integral de la música de Bon Jovi y ha contribuido a muchos de sus
+                                    éxitos.
+                                    Además de su trabajo con la banda, también ha lanzado álbumes en solitario y ha
+                                    participado
+                                    en proyectos musicales diversos. Es un músico talentoso y ha sido reconocido por su
+                                    contribución a la industria de la música.</p>
+                                <br>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="image">
+                                    <img src="{% static 'web/img/bonjovi/Tico Torres.jpg' %}" alt="">
+                                </div>
+
+                                <div class="content">
+                                    <h3>Tico Torres</h3>
+                                    <p>Tico Torres, cuyo nombre real es Hector Samuel Torres, es un músico y baterista
+                                        estadounidense nacido el 7 de octubre de 1953 en Nueva York. Es conocido por ser el
+                                        baterista de la banda de rock Bon Jovi, una posición que ha ocupado desde los
+                                        primeros
+                                        días de la banda. Torres ha contribuido significativamente a la energía y el ritmo
+                                        característicos de Bon Jovi a lo largo de su exitosa carrera. Además de su trabajo
+                                        con
+                                        la banda, Tico Torres ha participado en otros proyectos musicales y ha demostrado
+                                        ser un
+                                        baterista talentoso y versátil.</p>
+                                    <br>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="image">
+                                        <img src="{% static 'web/img/bonjovi/phil x.png' %}" alt="">
+                                    </div>
+
+                                    <div class="content">
+                                        <h3>Phil X</h3>
+                                        <p>Phil X, cuyo nombre real es Philip Xenidis, es un guitarrista canadiense nacido
+                                            el 10
+                                            de marzo de 1966 en Grecia. Es conocido por ser el guitarrista principal de la
+                                            banda
+                                            de rock Bon Jovi, un papel que asumió después de la partida de Richie Sambora en
+                                            2013. Phil X ha sido una incorporación destacada a la banda y ha contribuido a
+                                            su
+                                            sonido distintivo. Antes de unirse a Bon Jovi, Phil X tenía una exitosa carrera
+                                            como
+                                            músico de sesión y colaboró con varios artistas notables. Su estilo de guitarra
+                                            y su
+                                            presencia en el escenario han sido elogiados por fanáticos y críticos por igual.
+                                        </p>
+                                        <br>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="image">
+                                            <img src="{% static 'web/img/bonjovi/Hugh-McDonald.jpg' %}"alt="">
+                                        </div>
+
+                                        <div class="content">
+                                            <h3>Hugh McDonald</h3>
+                                            <p>Hugh McDonald es un músico estadounidense nacido el 28 de diciembre de 1950
+                                                en
+                                                Filadelfia, Pensilvania. Es conocido por ser el bajista de la banda de rock
+                                                Bon
+                                                Jovi. McDonald se unió a la banda en 1994 como bajista de gira y,
+                                                finalmente, se
+                                                convirtió en miembro oficial en 2016. Su contribución al bajo ha sido una
+                                                parte
+                                                importante del sonido de Bon Jovi en giras y grabaciones, y ha sido un
+                                                miembro
+                                                valioso durante muchos años. Además de su trabajo con Bon Jovi, McDonald ha
+                                                tenido una carrera musical sólida y versátil como músico de sesión y en
+                                                otros
+                                                proyectos musicales.</p>
+                                            <br>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                        
+            </section>
+
+            <section class="merch" id="merch">
+
+                <h1 class="heading">Merch oficial</h1>
+
+                <div class="swiper-container merch-slider">
+
+                    <div class="swiper-wrapper wrapper">
+
+
+                        <div class="swiper-slide slide">
+                            <i class="fas fa-heart"></i>
+                            <div class="producto">
+                                <img src="{% static 'web/img/bonjovi/il_1140xN.3137325959_t1sf.jpg' %}" alt="">
+                                <div class="producto-info">
+                                    <h3>Remera</h3>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Esta prenda es un elemento de moda perfecto para los fanáticos de Bon
+                                Jovi que desean mostrar su apoyo a la banda y su amor por su música
+                                de una manera estilizada y llamativa. La impresión y el diseño
+                                capturan la esencia de la banda y su energía en el escenario, lo que
+                                la convierte en una prenda atractiva para los seguidores de la música rock</p>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-pagination">
+
+
+
+                    </div>
+            </section>
+    {% endblock %}
+
+    {% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'web/js/mainbonjovi.js' %}"></script>
+    {% endblock %}
+
+    
+    {% block footer %}
+        <div class="footer-left">
+            <h3>Bon Jovi</h3>
+
+            <p class="footer-links">
+                <a href="#BTS">Bon Jovi</a>
+                |
+                <a href="#albums">Albums</a>
+                |
+                <a href="#miembros">Miembros</a>
+                |
+                <a href="#merch">Merch</a>
+            </p>
+
+            <p class="footer-company-name"> Copyright 2024 <strong>Bon Jovi its suppliers or
+                    licensors. All Rights Reserved.</strong></p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-earth"></i>
+                <a href="https://www.bonjovi.com/" target="_blank">https://www.bonjovi.com/</a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Nuestras redes sociales</span>
+            </p>
+            <div class="footer-icons">
+                <a href="https://twitter.com/BonJovi?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                    target="_blank"><i class="fas fa-x"></i></a>
+                <a href="https://www.instagram.com/bonjovi/?hl=es" target="_blank"><i class="fas fa-camera"></i></a>
+                <a href="https://www.youtube.com/channel/UCkBwnm7GOfYHsacwUjriC-w" target="_blank"><i
+                        class="fas fa-video"></i></a>
+            </div>
+        </div>
+    {% endblock %}
+
+</body>

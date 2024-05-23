@@ -1,0 +1,143 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'web/img/index/logo.png' %}"  type="image/x-icon">
+    <title>Prismatic</title>
+    <link rel="stylesheet" href="{% static 'web/styles/index.css' %}">
+    <style>
+        html {
+            background: url(https://images.unsplash.com/photo-1546707012-c46675f12716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style> 
+
+</head>
+
+<body>
+    <header>
+        <button class="btn-hamburguer" id="abrir">Menu</button>
+        <img class="logo" src="{% static 'web/img/index/logo.png' %}"  alt="Logo">
+
+        <nav class="visible" id="nav">
+
+            <ul>
+                <button class="cerrar-menu" id="cerrar">Cerrar</button>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'bonjovi' %}" target="_self">Bon Jovi</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="card.html" target="_self"><b>Nosotros</b></a></li>
+            </ul>
+        </nav>
+        
+        <ul>
+            <a href="{% url 'registro' %}" class="btn-registro">
+                <button onclick="abrirForm()">Login</button>
+            </a>
+        </ul>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </header>
+
+ 
+
+    <!--Video de youtube-->
+    <div class="container">
+        <!-- Ruta del video inicial -->
+        <video src="{% static 'web/videos/index/Bon Jovi.mp4' %}" class="slider" muted autoplay loop controls></video>
+
+        <ul>
+            {% for video in videos %}
+            <li onclick="videoslider('{% static video.src %}')">
+                <video src="{% static video.src %}"></video>
+            </li>
+            {% endfor %}
+        </ul>    
+
+   
+    </div>
+    
+
+    <script>
+        function videoslider(links) {
+            document.querySelector(".slider").src = links;
+        }
+    </script>
+
+
+
+
+    <!--CARDS-->
+    <h1 style="color:white">
+        Nuestros Artistas
+    </h1>
+        
+    <div class="tar-contenedor">
+        {% for card in cards %}
+        <div class="card">
+            <div class="face front">
+                <img src="{% static card.imagen %}" alt="">
+                <h3>{{ card.titulo }}</h3>
+            </div>
+            <div class="face back">
+                <h3>{{ card.titulo }}</h3>
+                <p>{{ card.descripcion }}</p>
+                <div class="link">
+                    <a href="{{ card.enlace }}" target="">Detalles</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!--SECCION DE CANIONES MAS ESCUCHADAS-->
+    <h1 style="color:white">Canciones mas populares de Prismatic</h1>
+
+    <div class="contenedor-music" id="app">
+
+
+        <div style="margin-right: 2rem;" v-for="elemento in canciones.slice(0, 4)">
+            <div class="card">
+                <div class="face front">
+                    <img :src="elemento.artwork['480x480']" alt="">
+                    <h3>{{elemento.title}}</h3>
+                </div>
+                <div class="face back">
+                    
+                    <P>{{elemento.description}}</P>
+                    <div class="link">
+                        <a href="#">Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <h1>{{elemento.genre}}</h1>
+
+
+
+        </div>
+
+    </div>
+
+    
+    <footer>
+        <p> <b> Derechos de autor © 2024 - Prismatic </b> </p>
+    </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="{% static 'web/js/main.js' %}"></script>
+
+
+
+</body>
+
+</html>

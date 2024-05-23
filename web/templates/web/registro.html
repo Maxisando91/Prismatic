@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'web/img/index/logo.png' %}"  type="image/x-icon">
+    <title>Prismatic</title>
+    <link rel="stylesheet" href="{% static 'web/styles/registro.css' %}">
+    <style>
+        html {
+            background: url(https://images.unsplash.com/photo-1546707012-c46675f12716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="btn-hamburguer" id="abrir">Menu</button>
+        <img class="logo" src="{% static 'web/img/index/logo.png' %}"  alt="Logo">
+
+        <nav class="visible" id="nav">
+            <ul>
+                <button class="cerrar-menu" id="cerrar">Cerrar</button>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'bonjovi' %}" target="_self">Bon Jovi</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="card.html" target="_self"><b>Nosotros</b></a></li>
+            </ul>
+        </nav>
+    </header>
+        <div class="card">
+            <h2>Registro</h2>
+            <form method = "POST" action="{% url 'registro' %}">
+                {% csrf_token %}
+                {{registro_form.as_p}}
+
+                <button type="submit">Continuar</button>
+                <p>Al crear una cuenta, aceptas las Condiciones de uso y venta de Prismatic. Consulta el Aviso de privacidad, el Aviso de cookies y el Aviso de anuncios basados en intereses.</p>
+
+
+            </form>
+        </div>
+
+    <footer>
+        <p> <b> Derechos de autor © 2024 - Prismatic </b> </p>
+    </footer>
+  
+</body>
+
+</html>
